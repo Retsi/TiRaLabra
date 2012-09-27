@@ -101,5 +101,7 @@ public class Main {
         kekoKeonMuodostaminenLopussa = System.currentTimeMillis();
         kekoAikaaKului = kekoKeonMuodostaminenLopussa-kekoKeonMuodostaminenAlussa;
         System.out.println("Aikaa kului kolmikekoon: " + kekoAikaaKului + " ms");
+        
+         System.out.println("i jaettuna 3: " + (1/2));
     }
 }
