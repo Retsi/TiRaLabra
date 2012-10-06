@@ -138,8 +138,8 @@ public class KolmiKeko {
         }
     }
  
-    public ArrayList<Integer> heapSort() {
-        ArrayList<Integer> sortattuKeko = new ArrayList<>();
+    public ArreiList heapSort() {
+        ArreiList sortattuKeko = new ArreiList();
         for (int i = keko.size() - 1; i >= 0; i--) {
             sortattuKeko.add(0, keko.get(0));
             keko.set(0, keko.get(keko.size() - 1));

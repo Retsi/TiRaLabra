@@ -123,7 +123,7 @@ public class DKeko {
     public ArreiList heapSort() {
         ArreiList sortattuKeko = new ArreiList();
         for (int i = keko.size() - 1; i >= 0; i--) {
-    //        sortattuKeko.add(0, keko.get(0));
+            sortattuKeko.add(0, keko.get(0));
             keko.set(0, keko.get(keko.size() - 1));
             keko.remove(keko.size() - 1);
             heapify(0);
