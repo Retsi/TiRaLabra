@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * the editor.
  */
 /**
- *
+ *Kolmikeon ilmentymä operaatioineen.
  * @author Lauri
  */
 public class KolmiKeko {
@@ -13,22 +13,45 @@ public class KolmiKeko {
    // private ArrayList<Integer> keko;
     private ArreiList keko;
  
+    /**
+     * Keon konstruktori. Alustaa keon uudeksi ArreiListiksi.
+     */
     public KolmiKeko() {
         keko = new ArreiList();
     }
  
+    /**
+     * Palauttaa indeksin vasemmanpuolisen indeksin.
+     * @param indeksi Indeksi jonka vasemmanpuolisen lapsen indeksi halutaan.
+     * @return Vasemmanpuolisen lapsen indeksi.
+     */
     public int vasen(int indeksi) {
         return 3 * indeksi + 1;
     }
  
+    /**
+     * Palauttaa indeksin oikeanpuolisen indeksin.
+     * @param indeksi Indeksi jonka oikeanpuolisen lapsen indeksi halutaan.
+     * @return Oikeanpuolisen lapsen indeksi.
+     */
     public int oikea(int indeksi) {
         return 3 * indeksi + 3;
     }
     
+    /**
+     * Palauttaa indeksin keskimmäisen indeksin.
+     * @param indeksi Indeksi jonka keskimmäisen lapsen indeksi halutaan.
+     * @return Keskimmäisen lapsen indeksi.
+     */
     public int keski(int indeksi){
         return 3 * indeksi + 2;
     }
  
+    /**
+     * Palauttaa vanhemman indeksin.
+     * @param indeksi Indeksi jonka vanhemman indeksi halutaan.
+     * @return Vanhemman indeksi.
+     */
     public int parent(int indeksi) {
  
         if (indeksi <= 0) {
@@ -42,6 +65,10 @@ public class KolmiKeko {
             return indeksi/3;
     }
  
+    /**
+     * Lisää kekoon luvun.
+     * @param luku Luku joka halutaan lisätä kekoon.
+     */
     public void heapInsert(int luku) {
         int indeksi = keko.size();
         keko.add(luku);
@@ -54,6 +81,10 @@ public class KolmiKeko {
         }
     }
  
+    /**
+     * Palauttaa keon suurimman (huipulla olevan) arvon.
+     * @return Keon suurin arvo.
+     */
     public int heapMax() {
         if (keko.size() == 0) {
             return -1;
@@ -63,6 +94,10 @@ public class KolmiKeko {
  
     }
  
+    /**
+     * Palauttaa keon suurimman (huipulla olevan) arvon ja poistaa sen keosta.
+     * @return Keon suurin arvo.
+     */
     public int heapDelMax() {
         int isoin = -1;
  
@@ -79,6 +114,10 @@ public class KolmiKeko {
         return isoin;
     }
  
+    /**
+     * Siirtää indeksistä löytyvän arvon sen oikealle paikalle kekoon.
+     * @param indeksi Indeksi jota siirretään.
+     */
     public void heapify(int indeksi) {
         int vasen = vasen(indeksi);
         int oikea = oikea(indeksi);
@@ -114,6 +153,11 @@ public class KolmiKeko {
         }
     }
  
+    /**
+     * Kasvattaa indeksistä löytävää arvoa.
+     * @param indeksi Indeksi josta löytyvää arvoa kasvatetaan.
+     * @param arvo Arvo joksi indeksistä löytyvä arvo kasvatetaan.
+     */
     public void heapIncKey(int indeksi, int arvo) {
         if (indeksi >= 0 && indeksi < keko.size()) {
             if (arvo > keko.get(indeksi)) {
@@ -129,6 +173,11 @@ public class KolmiKeko {
  
     }
  
+    /**
+     * Pienentää indeksistä löytyvää arvoa.
+     * @param indeksi Indeksi josta löytyvää arvoa pienennetään.
+     * @param arvo Arvo joksi indeksistä löytyvä arvo pienennetään.
+     */
     public void heapDecKey(int indeksi, int arvo) {
         if (indeksi >= 0 && indeksi < keko.size()) {
             if (arvo < keko.get(indeksi)) {
@@ -138,6 +187,10 @@ public class KolmiKeko {
         }
     }
  
+    /**
+     * Järjestää keon kasvavaan järjestykseen.
+     * @return Palauttaa järjestetyn taulukon.
+     */
     public ArreiList heapSort() {
         ArreiList sortattuKeko = new ArreiList();
         for (int i = keko.size() - 1; i >= 0; i--) {
@@ -149,6 +202,10 @@ public class KolmiKeko {
         return sortattuKeko;
     }
  
+    /**
+     * Palauttaa keon.
+     * @return ArreiList ilmentymä keosta.
+     */
     public ArreiList getKeko() {
         return keko;
     }

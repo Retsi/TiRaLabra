@@ -4,7 +4,7 @@
  */
 
 /**
- *
+ *ArreiList joka vastaa jossainmäärin ArrayList<Integer>:iä.
  * @author lmsainio
  */
 public class ArreiList {
@@ -12,10 +12,17 @@ public class ArreiList {
     int[] arreilist;
     int koko;
 
+    /**
+     * Alustaa vain ArreiList taulukon kooksi 0.
+     */
     public ArreiList() {
         koko = 0;
     }
 
+    /**
+     * Lisää taulukkoon halutun numeron. Taulukon täyttyessä kaksinkertaistaa sen koon. Ensimmäisellä lisäyksellä luo yhden kokoisen taulukon.
+     * @param numero Lisättävä numero.
+     */
     public void add(int numero) {
         if (koko == 0) {
             arreilist = new int[1];
@@ -35,6 +42,11 @@ public class ArreiList {
 
     }
 
+    /**
+     * Lisää numeron tiettyyn kohtaan taulukkoa siirtäen sen jälkeisiä arvoja taaksepäin.
+     * @param indeksi Indeksi mihin kohtaan uusi luku lisätään.
+     * @param numero Lisättävä luku.
+     */
     public void add(int indeksi, int numero) {
         if (koko == 0 && indeksi == 0) {
             arreilist = new int[1];
@@ -65,6 +77,10 @@ public class ArreiList {
 
     }
 
+    /**
+     * Palauttaa ArreiListin koon.
+     * @return ArreiListin koko.
+     */
     public int size() {
         if (koko == 0) {
             return -1;
@@ -72,14 +88,28 @@ public class ArreiList {
         return koko;
     }
 
+    /**
+     * Paulauttaa arvon halutusta indeksistä.
+     * @param indeksi Haluttu indeksi.
+     * @return Indeksistä löytyvä arvo.
+     */
     public int get(int indeksi) {
         return arreilist[indeksi];
     }
 
+    /**
+     * Sijoittaa haluttuun indeksiin tietyn arvon korvaten indeksistä ennestään löytyneen arvon.
+     * @param indeksi Indeksi jonne arvo sijoitetaan.
+     * @param arvo Haluttu arvo.
+     */
     public void set(int indeksi, int arvo) {
         arreilist[indeksi] = arvo;
     }
 
+    /**
+     * Poistaa arvon taulukosta halutusta kohdasta.
+     * @param indeksi Indeksi josta arvo poistetaan.
+     */
     public void remove(int indeksi) {
         int[] ennen = new int[indeksi];
         int[] jalkeen = new int[koko - indeksi - 1];

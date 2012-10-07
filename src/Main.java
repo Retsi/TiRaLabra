@@ -92,5 +92,7 @@ public class Main {
         System.out.println("Aikaa keko-operaatioihin kului: " + KekoOperaatiot(numerot, keko) + "ms");
         System.out.println("Aikaa kolmikeko-operaatioihin kului: " + KolmiKekoOperaatiot(numerot, kolmikeko) + "ms");
         System.out.println("Aikaa dkeko-operaatioihin kului: " + DKekoOperaatiot(numerot, dkeko) + "ms");
+        
+        
     }
 }

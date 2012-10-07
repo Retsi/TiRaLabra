@@ -4,7 +4,7 @@
  */
 
 /**
- *
+ *D-Keko ilmentymä operaatioineen.
  * @author lmsainio
  */
 public class DKeko {
@@ -12,6 +12,10 @@ public class DKeko {
     private ArreiList keko;
     private int d;
 
+    /**
+     * DKeko -luokan konstruktori. Alustaa d:n eli lapsien määrän halutuksi ja luo uuden ArreiListin.
+     * @param d Haluttu lapsien määrä.
+     */
     public DKeko(int d) {
         if (d > 0) {
             keko = new ArreiList();
@@ -19,6 +23,11 @@ public class DKeko {
         }
     }
 
+    /**
+     * Palauttaa indeksin vanhemman indeksin.
+     * @param indeksi Indeksi jonka vanhemman indeksi halutaan.
+     * @return Vanhemman indeksi.
+     */
     public int parent(int indeksi) {
         if (indeksi <= 0) {
             return -1;
@@ -30,6 +39,11 @@ public class DKeko {
         }
     }
 
+    /**
+     * Hakee indeksin isoimman lapsen indeksin.
+     * @param indeksi Indeksin jonka isoin lapsi halutaan.
+     * @return Isoimman lapsen indeksi.
+     */
     public int getIsoinLapsi(int indeksi) {
         int isoin = -1;
         if (keko.size() == 0) {
@@ -48,6 +62,10 @@ public class DKeko {
         return isoin;
     }
 
+    /**
+     * Palauttaa keon suurimman (huipulla olevan) arvon.
+     * @return Keon suurin arvo.
+     */
     public int heapMax() {
         if (keko.size() == 0) {
             return -1;
@@ -56,10 +74,18 @@ public class DKeko {
         }
     }
 
+    /**
+     * Palauttaa keon.
+     * @return ArreiList ilmentymä keosta.
+     */
     public ArreiList getKeko() {
         return keko;
     }
 
+    /**
+     * Lisää kekoon luvun.
+     * @param luku Luku joka halutaan lisätä kekoon.
+     */
     public void heapInsert(int luku) {
         int indeksi = keko.size();
         keko.add(luku);
@@ -72,6 +98,10 @@ public class DKeko {
         }
     }
 
+    /**
+     * Siirtää indeksistä löytyvän arvon sen oikealle paikalle kekoon.
+     * @param indeksi Indeksi jota siirretään.
+     */
     public void heapify(int indeksi) {
 
         int suurin = getIsoinLapsi(indeksi);
@@ -87,6 +117,10 @@ public class DKeko {
         }
     }
 
+    /**
+     * Palauttaa keon suurimman (huipulla olevan) arvon ja poistaa sen keosta.
+     * @return Keon suurin arvo.
+     */
     public int heapDelMax() {
         int isoin = -1;
 
@@ -103,6 +137,11 @@ public class DKeko {
         return isoin;
     }
 
+    /**
+     * Kasvattaa indeksistä löytävää arvoa.
+     * @param indeksi Indeksi josta löytyvää arvoa kasvatetaan.
+     * @param arvo Arvo joksi indeksistä löytyvä arvo kasvatetaan.
+     */
     public void heapIncKey(int indeksi, int arvo) {
         if (indeksi >= 0 && indeksi < keko.size()) {
             if (arvo > keko.get(indeksi)) {
@@ -118,6 +157,11 @@ public class DKeko {
 
     }
 
+    /**
+     * Pienentää indeksistä löytyvää arvoa.
+     * @param indeksi Indeksi josta löytyvää arvoa pienennetään.
+     * @param arvo Arvo joksi indeksistä löytyvä arvo pienennetään.
+     */
     public void heapDecKey(int indeksi, int arvo) {
         if (indeksi >= 0 && indeksi < keko.size()) {
             if (arvo < keko.get(indeksi)) {
@@ -127,6 +171,10 @@ public class DKeko {
         }
     }
 
+    /**
+     * Järjestää keon kasvavaan järjestykseen.
+     * @return Palauttaa järjestetyn taulukon.
+     */
     public ArreiList heapSort() {
         ArreiList sortattuKeko = new ArreiList();
         for (int i = keko.size() - 1; i >= 0; i--) {
