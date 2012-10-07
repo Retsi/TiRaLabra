@@ -88,18 +88,9 @@ public class Main {
         for (int i = 0; i < 1000; i++) {
             numerot.add((int) (Math.random() * 1001));
         }
-//        
-//        System.out.println("Aikaa keko-operaatioihin kului: " + KekoOperaatiot(numerot, keko) + "ms");
-//        System.out.println("Aikaa kolmikeko-operaatioihin kului: " + KolmiKekoOperaatiot(numerot, kolmikeko) + "ms");
-//        System.out.println("Aikaa dkeko-operaatioihin kului: " + DKekoOperaatiot(numerot, dkeko) + "ms");
         
-        keko.heapInsert(5);
-        keko.heapInsert(4);
-        keko.heapInsert(2);
-        keko.heapInsert(7);
-        keko.heapInsert(6);
-        keko.heapIncKey(4, 9);
-        keko.heapDecKey(0, 5);
-        System.out.println(keko.getKeko());
+        System.out.println("Aikaa keko-operaatioihin kului: " + KekoOperaatiot(numerot, keko) + "ms");
+        System.out.println("Aikaa kolmikeko-operaatioihin kului: " + KolmiKekoOperaatiot(numerot, kolmikeko) + "ms");
+        System.out.println("Aikaa dkeko-operaatioihin kului: " + DKekoOperaatiot(numerot, dkeko) + "ms");
     }
 }
