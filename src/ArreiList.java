@@ -38,8 +38,10 @@ public class ArreiList {
     public void add(int indeksi, int numero) {
         if (koko == 0 && indeksi == 0) {
             arreilist = new int[1];
+            arreilist[0] = numero;
             koko++;
         }
+        else{
         if (koko == arreilist.length) {
             int[] isompitaulukko = new int[arreilist.length * 2];
             for (int i = 0; i < arreilist.length; i++) {
@@ -59,6 +61,7 @@ public class ArreiList {
             arreilist[indeksi+i+1] = jalkeen[i];
         }
         koko++;
+        }
 
     }
 
