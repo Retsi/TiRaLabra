@@ -5,26 +5,43 @@ import java.util.ArrayList;
  * the editor.
  */
 /**
- *
+ * Luokassa keko-operaatiot
  * @author Lauri
  */
 public class Keko {
  
-   // private ArrayList<Integer> keko;
     private ArreiList keko;
  
+    /**
+     * Keon konstruktori. Alustaa keon uudeksi ArreiListiksi.
+     */
     public Keko() {
         keko = new ArreiList();
     }
  
+    /**
+     * Palauttaa indeksin vasemmanpuolisen indeksin.
+     * @param indeksi Indeksi jonka vasemmanpuolisen lapsen indeksi halutaan.
+     * @return Vasemmanpuolisen lapsen indeksi.
+     */
     public int vasen(int indeksi) {
         return 2 * indeksi + 1;
     }
  
+    /**
+     * Palauttaa indeksin oikeanpuolisen indeksin.
+     * @param indeksi Indeksi jonka oikeanpuolisen lapsen indeksi halutaan.
+     * @return Oikeanpuolisen lapsen indeksi.
+     */
     public int oikea(int indeksi) {
         return 2 * indeksi + 2;
     }
  
+    /**
+     * Palauttaa vanhemman indeksin.
+     * @param indeksi Indeksi jonka vanhemman indeksi halutaan.
+     * @return Vanhemman indeksi.
+     */
     public int parent(int indeksi) {
  
         if (indeksi <= 0) {
@@ -38,6 +55,10 @@ public class Keko {
         }
     }
  
+    /**
+     * Lisää kekoon luvun.
+     * @param luku Luku joka halutaan lisätä kekoon.
+     */
     public void heapInsert(int luku) {
         int indeksi = keko.size();
         keko.add(luku);
@@ -50,6 +71,10 @@ public class Keko {
         }
     }
  
+    /**
+     * Palauttaa keon suurimman (huipulla olevan) arvon.
+     * @return Keon suurin arvo.
+     */
     public int heapMax() {
         if (keko.size() == 0) {
             return -1;
@@ -59,6 +84,10 @@ public class Keko {
  
     }
  
+    /**
+     * Palauttaa keon suurimman (huipulla olevan) arvon ja poistaa sen keosta.
+     * @return Keon suurin arvo.
+     */
     public int heapDelMax() {
         int isoin = -1;
  
@@ -75,6 +104,10 @@ public class Keko {
         return isoin;
     }
  
+    /**
+     * Siirtää indeksistä löytyvän arvon sen oikealle paikalle kekoon.
+     * @param indeksi Indeksi jota siirretään.
+     */
     public void heapify(int indeksi) {
         int vasen = vasen(indeksi);
         int oikea = oikea(indeksi);
@@ -100,6 +133,11 @@ public class Keko {
         }
     }
  
+    /**
+     * Kasvattaa indeksistä löytävää arvoa.
+     * @param indeksi Indeksi josta löytyvää arvoa kasvatetaan.
+     * @param arvo Arvo joksi indeksistä löytyvä arvo kasvatetaan.
+     */
     public void heapIncKey(int indeksi, int arvo) {
         if (indeksi >= 0 && indeksi < keko.size()) {
             if (arvo > keko.get(indeksi)) {
@@ -115,6 +153,11 @@ public class Keko {
  
     }
  
+    /**
+     * Pienentää indeksistä löytyvää arvoa.
+     * @param indeksi Indeksi josta löytyvää arvoa pienennetään.
+     * @param arvo Arvo joksi indeksistä löytyvä arvo pienennetään.
+     */
     public void heapDecKey(int indeksi, int arvo) {
         if (indeksi >= 0 && indeksi < keko.size()) {
             if (arvo < keko.get(indeksi)) {
@@ -124,6 +167,10 @@ public class Keko {
         }
     }
  
+    /**
+     * Järjestää keon kasvavaan järjestykseen.
+     * @return Palauttaa järjestetyn taulukon.
+     */
     public ArrayList<Integer> heapSort() {
         ArrayList<Integer> sortattuKeko = new ArrayList<>();
         for (int i = keko.size() - 1; i >= 0; i--) {
@@ -135,6 +182,10 @@ public class Keko {
         return sortattuKeko;
     }
  
+    /**
+     * Palauttaa keon.
+     * @return ArreiList ilmentymä keosta.
+     */
     public ArreiList getKeko() {
         return keko;
     }

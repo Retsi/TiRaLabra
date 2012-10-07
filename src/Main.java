@@ -25,7 +25,7 @@ public class Main {
         keko.heapDelMax();
         keko.heapDelMax();
         keko.heapDecKey(15, 1);
-        keko.heapDecKey(856, 1002);
+        keko.heapIncKey(856, 1002);
         keko.heapSort();
         
         long aikaLopussa = System.currentTimeMillis();
@@ -42,7 +42,7 @@ public class Main {
         keko.heapDelMax();
         keko.heapDelMax();
         keko.heapDecKey(15, 1);
-        keko.heapDecKey(856, 1002);
+        keko.heapIncKey(856, 1002);
         keko.heapSort();
         
         long aikaLopussa = System.currentTimeMillis();
@@ -59,7 +59,7 @@ public class Main {
         keko.heapDelMax();
         keko.heapDelMax();
         keko.heapDecKey(15, 1);
-        keko.heapDecKey(856, 1002);
+        keko.heapIncKey(856, 1002);
         keko.heapSort();
         
         long aikaLopussa = System.currentTimeMillis();
