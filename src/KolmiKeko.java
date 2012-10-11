@@ -147,9 +147,14 @@ public class KolmiKeko {
             keko.set(vasen, luku);
         }
         else if(keski + 1 == keko.size() && keko.get(indeksi) < keko.get(keski)){
+            int suurempi = -1;
+            if(keko.get(vasen) > keko.get(keski))
+                suurempi = vasen;
+            else
+                suurempi = keski;
             int luku = keko.get(indeksi);
-            keko.set(indeksi, keko.get(keski));
-            keko.set(keski, luku);
+            keko.set(indeksi, keko.get(suurempi));
+            keko.set(suurempi, luku);
         }
     }
  

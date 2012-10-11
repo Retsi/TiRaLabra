@@ -7,11 +7,14 @@ import java.util.Scanner;
  * the editor.
  */
 /**
- *
+ *Kekojen vertailuohjelma.
  * @author Lauri
  */
 public class Main {
     
+    /**
+     *
+     */
     private static Keko keko;
     private static KolmiKeko kolmikeko;
     private static DKeko dkeko;
